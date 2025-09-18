@@ -43,7 +43,7 @@ export async function POST(req){
 
         const completion = await openai.chat.completions.create({
             messages: [{ role: "user", content: prompt }],
-            model: "deepseek-chat",
+            model: "deepseek-reasoner",
             store: true,
         });
 
@@ -56,4 +56,5 @@ export async function POST(req){
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message });
     }
+
 }
